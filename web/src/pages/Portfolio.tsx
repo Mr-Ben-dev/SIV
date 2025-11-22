@@ -532,6 +532,58 @@ const Portfolio = () => {
         </Card>
       </div>
 
+      {/* Vault Token Holdings */}
+      <Card className="glass p-6">
+        <h2 className="text-xl font-semibold mb-4">Vault Holdings</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* WMAS */}
+          <div className="flex flex-col p-4 border rounded-lg">
+            <span className="text-sm text-muted-foreground mb-1">WMAS</span>
+            <span className="text-lg font-mono">
+              {balances ? formatTokenAmount(balances.wmas, 9, 4) : "0.0000"}
+            </span>
+            {prices && balances && (
+              <span className="text-xs text-muted-foreground mt-1">
+                ≈{" "}
+                {formatUSDPrice(
+                  (Number(balances.wmas) / 1_000_000_000) * prices.wmas
+                )}
+              </span>
+            )}
+          </div>
+
+          {/* WETH.e */}
+          <div className="flex flex-col p-4 border rounded-lg">
+            <span className="text-sm text-muted-foreground mb-1">WETH.e</span>
+            <span className="text-lg font-mono">
+              {balances ? formatTokenAmount(balances.wethe, 18, 6) : "0.000000"}
+            </span>
+            {prices && balances && (
+              <span className="text-xs text-muted-foreground mt-1">
+                ≈{" "}
+                {formatUSDPrice(
+                  (Number(balances.wethe) / 1_000_000_000_000_000_000) *
+                    prices.wethe
+                )}
+              </span>
+            )}
+          </div>
+
+          {/* USDC.e */}
+          <div className="flex flex-col p-4 border rounded-lg">
+            <span className="text-sm text-muted-foreground mb-1">USDC.e</span>
+            <span className="text-lg font-mono">
+              {balances ? formatTokenAmount(balances.usdce, 6, 4) : "0.0000"}
+            </span>
+            {prices && balances && (
+              <span className="text-xs text-muted-foreground mt-1">
+                ≈ {formatUSDPrice(Number(balances.usdce) / 1_000_000)}
+              </span>
+            )}
+          </div>
+        </div>
+      </Card>
+
       {/* Wallet Balances Card */}
       <Card className="glass p-6">
         <div className="flex items-center justify-between mb-6">
