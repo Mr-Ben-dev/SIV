@@ -1,0 +1,61 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production
+build/
+dist/
+
+# Environment files (SECRETS)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+contracts/.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+temp/
+tmp/
+
+# Documentation (except README.md)
+*.md
+!README.md
+
+# Scripts directory (deployment/testing scripts)
+scripts/
+
+# Unnecessary build artifacts
+*.tsbuildinfo
+.eslintcache
+
+# Package manager
+.yarn/
+.npm/
+package-lock.json
+yarn.lock
+bun.lockb
