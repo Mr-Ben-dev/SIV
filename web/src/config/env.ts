@@ -18,7 +18,7 @@ const envSchema = z.object({
   VITE_SIV_VAULT_ADDRESS: z
     .string()
     .min(1)
-    .default("AS1vq6bHTGjaNCXc8yeHHpf3jtgnBCRJUFsevzYZR54FQJaYSKiS"),
+    .default("AS12sg3SQ8mothtCNAALa7PgrzdpkGyicgNDXYqXFKpakZo4ed6gN"),
   VITE_USDCE_ADDRESS: z
     .string()
     .min(1)

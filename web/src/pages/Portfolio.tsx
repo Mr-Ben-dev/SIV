@@ -508,7 +508,7 @@ const Portfolio = () => {
           <div className="flex items-center justify-between mb-4">
             <Fuel className="w-5 h-5 text-complement" />
             <Button
-              onClick={() => topUpGasBank(1000000000n)} // 1 MAS
+              onClick={() => topUpGasBank(10000000000n)} // 10 MAS
               size="sm"
               variant="outline"
               className="text-xs press-scale"

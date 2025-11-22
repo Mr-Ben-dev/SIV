@@ -1230,14 +1230,12 @@ export function redeem(binaryArgs: StaticArray<u8>): void {
       );
     }
 
-    // Get final USDC balance and transfer to user
-    const finalUsdcStr = getTokenBalanceString(USDC_ADDRESS);
-    const finalUsdc = U64.parseInt(finalUsdcStr);
-
-    transferTokenToUser(USDC_ADDRESS, caller, finalUsdc);
+    // Transfer accumulated USDC (user's share + swap proceeds) to user
+    // Important: transfer totalUSDC (what user owns), NOT entire contract balance
+    transferTokenToUser(USDC_ADDRESS, caller, totalUSDC);
 
     generateEvent(
-      `RedeemExecuted:{"shares":"${shares}","toUSDC":true,"usdcFinal":"${finalUsdc}"}`,
+      `RedeemExecuted:{"shares":"${shares}","toUSDC":true,"usdcFinal":"${totalUSDC}"}`,
     );
   } else {
     // Transfer proportional amounts of each token
