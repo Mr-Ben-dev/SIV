@@ -2,13 +2,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  ExternalLink,
-  Shield,
-  TrendingUp,
-  Zap,
-} from "lucide-react";
+import { ArrowRight, Shield, TrendingUp, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Landing = () => {
@@ -57,22 +51,6 @@ const Landing = () => {
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 How it works
-              </a>
-              <a
-                href="https://docs.lovable.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
-              >
-                Docs <ExternalLink className="w-3 h-3" />
-              </a>
-              <a
-                href="https://lovable.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
-              >
-                DeWeb Site <ExternalLink className="w-3 h-3" />
               </a>
               <Link to="/app/portfolio">
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground press-scale">

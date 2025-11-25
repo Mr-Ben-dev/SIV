@@ -1,30 +1,34 @@
-import { Card } from "@/components/ui/card";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 const Help = () => {
   const steps = [
     {
       title: "Deposit USDC",
-      description: "Users deposit USDC.e into the vault and receive share tokens representing their portion of the pool.",
+      description:
+        "Users deposit USDC.e into the vault and receive share tokens representing their portion of the pool.",
     },
     {
       title: "Detect Drift",
-      description: "The system monitors portfolio weights and detects when they drift from target allocations.",
+      description:
+        "The system monitors portfolio weights and detects when they drift from target allocations.",
     },
     {
       title: "Schedule Slices",
-      description: "Rebalancing is split into 6 time-sliced transactions, executed via deferred calls in the cheapest slots.",
+      description:
+        "Rebalancing is split into 6 time-sliced transactions, executed via deferred calls in the cheapest slots.",
     },
     {
       title: "Execute & Guard",
-      description: "Each slice executes automatically. The risk-off guard monitors volatility and shifts to defensive positions when needed.",
+      description:
+        "Each slice executes automatically. The risk-off guard monitors volatility and shifts to defensive positions when needed.",
     },
   ];
 
@@ -60,7 +64,8 @@ const Help = () => {
       <div>
         <h1 className="text-3xl font-bold mb-2">Help & Documentation</h1>
         <p className="text-muted-foreground">
-          Learn how Sentinel Index Vault works and get answers to common questions
+          Learn how Sentinel Index Vault works and get answers to common
+          questions
         </p>
       </div>
 
@@ -78,7 +83,9 @@ const Help = () => {
               </div>
               <div className="flex-1">
                 <h3 className="font-semibold mb-1">{step.title}</h3>
-                <p className="text-sm text-muted-foreground">{step.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {step.description}
+                </p>
               </div>
             </div>
           ))}
@@ -87,7 +94,8 @@ const Help = () => {
         <div className="pt-4 border-t border-border/50">
           <div className="bg-complement-muted border border-complement/20 rounded-lg p-4">
             <p className="text-sm text-complement mb-2">
-              <strong>Key Advantage:</strong> Time-slicing reduces market impact and finds optimal execution prices across multiple blocks.
+              <strong>Key Advantage:</strong> Time-slicing reduces market impact
+              and finds optimal execution prices across multiple blocks.
             </p>
           </div>
         </div>
@@ -100,9 +108,7 @@ const Help = () => {
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left">
-                {faq.q}
-              </AccordionTrigger>
+              <AccordionTrigger className="text-left">{faq.q}</AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
                 {faq.a}
               </AccordionContent>
@@ -116,15 +122,6 @@ const Help = () => {
         <h2 className="text-xl font-semibold">Additional Resources</h2>
 
         <div className="space-y-2">
-          <a
-            href="https://docs.lovable.dev"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/30 transition-colors group"
-          >
-            <span className="text-sm font-medium">Full Documentation</span>
-            <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-          </a>
           <a
             href="https://massa.net"
             target="_blank"
